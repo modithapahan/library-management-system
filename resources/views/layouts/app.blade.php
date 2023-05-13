@@ -26,18 +26,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
-
 </head>
 
-<body>
+<body style="background-color: rgb(251, 251, 238)">
     {{-- Header Section --}}
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg shadow" style="background-color: rgb(71, 113, 219)">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="{{ asset('img/logo.png') }}" alt="logo" style="width: 40px">
@@ -49,20 +42,35 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-pills me-3 ms-2 mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                <li class="nav-item me-3 fw-normal">
+                    <a class="nav-link" aria-current="page" href="#"
+                        style="color: white; font-weight: 500">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#" 
+                        style="color: white; font-weight: 500">
+                        Books
+                    </a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#" 
+                        style="color: white; font-weight: 500">
+                        journals
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Books</a>
+                    <a class="nav-link me-3" href="#" 
+                        style="color: white; font-weight: 500">
+                        Login
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">journals</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active p-2" href="#" style="color: white">Register</a>
+                    <a class="nav-link p-2" href="#"
+                        style="color: rgb(0, 0, 0); font-weight: 500; background-color: white;">
+                        Register
+                    </a>
                 </li>
             </ul>
         </div>
