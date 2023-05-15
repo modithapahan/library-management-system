@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.user.app')
 
 @section('content')
     {{-- Image Slider --}}
-    <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade mt-2" data-bs-ride="carousel">
+    <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="https://lib.cmb.ac.lk/wp-content/uploads/2020/08/lending2020.jpg" class="d-block w-100"
