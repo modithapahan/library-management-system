@@ -75,7 +75,7 @@
 
 
     {{-- Journal Section --}}
-    {{-- <div class="container mt-4 shadow" style="background-color: rgb(22, 126, 216)">
+    <div class="container mt-4 shadow" style="background-color: rgb(22, 126, 216)">
         <span>
             <p style="letter-spacing: 1px; font-weight: 500; font-size: 18px; color: white">Journals</p>
         </span>
@@ -124,7 +124,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
 
     {{-- About US --}}
