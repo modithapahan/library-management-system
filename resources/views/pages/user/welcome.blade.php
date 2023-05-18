@@ -29,7 +29,7 @@
     </div>
 
     <div class="container mt-2">
-        <div class="row gy-2 row-cols-1 row-cols-md-4">
+        <div class="row gy-2 row-cols-2 row-cols-md-4">
             <div class="col-sm d-flex justify-content-center">
                 <div class="card" style="width: 15rem;">
                     <img src="https://static.scientificamerican.com/sciam/cache/file/1DDFE633-2B85-468D-B28D05ADAE7D1AD8_source.jpg?w=590&h=800&D80F3D79-4382-49FA-BE4B4D0C62A5C3ED"
@@ -82,7 +82,7 @@
     </div>
 
     <div class="container mt-2">
-        <div class="row gy-2 row-cols-1 row-cols-md-4">
+        <div class="row gy-2 row-cols-2 row-cols-md-4">
             <div class="col-sm d-flex justify-content-center">
                 <div class="card" style="width: 15rem;">
                     <img src="https://static.scientificamerican.com/sciam/cache/file/1DDFE633-2B85-468D-B28D05ADAE7D1AD8_source.jpg?w=590&h=800&D80F3D79-4382-49FA-BE4B4D0C62A5C3ED"

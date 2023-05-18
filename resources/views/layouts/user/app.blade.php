@@ -15,10 +15,9 @@
     </script>
 </head>
 
-<body style="background-color: rgb(251, 251, 238)">
     {{-- Header Section --}}
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
+        <div class="container"> 
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="{{ asset('img/logo.png') }}" 
@@ -84,7 +83,7 @@
                     <li class="nav-item">
                         <a class="nav-link p-2"
                             style="color: rgb(255, 255, 255); font-weight: 500; background-color: rgb(21, 123, 232);"
-                            href="#">
+                            href="{{ route('user.register') }}">
                             Register
                         </a>
                     </li>
