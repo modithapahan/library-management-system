@@ -11,35 +11,37 @@
             >
         </div>
 
-        <div class="flex-grow-1 ms-3 mb-3" style="display: flex; justify-content: center; align-items: center">
-            <div style="max-width: 100%">
-                <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @if (session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}
-                        </div>
-                    @endif
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                            aria-describedby="emailHelp">
+        <div class="ms-3 mb-3" style="display: flex; justify-content: center; align-items: center">
+            <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" name="confirm-password" id="exampleInputPassword1">
-                    </div>
-                    <center>
-                        <button type="submit" class="btn btn-primary"
-                            style="width: 50%; letter-spacing: 0.1em; font-weight: 700;"> Register
-                        </button>
-                    </center>
-                </form>
-            </div>
+                @endif
+                <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" id="exampleInputName1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirm-password" id="exampleInputPassword1">
+                </div>
+                <center>
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 50%; letter-spacing: 0.1em; font-weight: 700;"> Register
+                    </button>
+                </center>
+            </form>
         </div>
     </div>
 @endsection
