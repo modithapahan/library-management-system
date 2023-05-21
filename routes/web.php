@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 /* USER ROUTES */
 Route::get('/user/register', [AuthController::class, 'register_view'])->name('user.register');
+Route::get('/user/login', [AuthController::class, 'login_view'])->name('user.login');
