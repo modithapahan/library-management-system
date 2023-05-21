@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Symfony\Component\Console\Input\Input;
 
 class AuthController extends Controller
@@ -24,7 +26,7 @@ class AuthController extends Controller
 
         if($user) {
             if(password_verify($request->input('password'), $user->password)) {
-                return redirect()->intended('/');
+                return view('pages.user.register');
             } else {
                 return redirect()->back()->with('error', 'Invalid Login');
             }
@@ -34,6 +36,20 @@ class AuthController extends Controller
     }
 
     public function register(Request $request) {
-        return dd($request->all());
+        $request->validate([
+             'email' => 'required|unique:users|email',
+             'password' => 'required|confirmed'
+        ]);
+
+        User::create([
+            'email' => $request->name,
+            'password' => Hash::make($request->password),
+        ]);
+
+        if(Auth::attempt($request->only('email', 'password'))) {
+            return redirect('home');
+        }
+
+        return redirect()->back()->withErrors('Error');
     }
 }
