@@ -15,6 +15,7 @@
     </script>
 </head>
 
+<body style="box-sizing: border-box">
     {{-- Header Section --}}
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container"> 
