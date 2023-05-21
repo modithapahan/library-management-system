@@ -14,28 +14,43 @@
         <div class="ms-3 mb-3" style="display: flex; justify-content: center; align-items: center">
             <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
+                @if (Session::has('success'))
+                    <div class="alert alert-success">{{ Session::get('success') }}</div>
+                @endif
+                @if (Session::has('fail'))
+                    <div class="alert alert-success">{{ Session::get('fail') }}</div>
                 @endif
                 <div class="mb-3">
                     <label for="exampleInputName1" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputName1">
+                    <input type="text" class="form-control" name="name" value="{{ old('name') }}" id="exampleInputName1">
+                    <span class="text-danger">
+                        @error('name')
+                            {{ $message }}
+                        @enderror
+                    </span>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                        aria-describedby="emailHelp">
+                    <input type="email" class="form-control" name="email" value="{{ old('email') }}" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <span class="text-danger">
+                        @error('email')
+                            {{ $message }}
+                        @enderror
+                    </span>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                    <input type="password" class="form-control" name="password" value="{{ old('password') }}" id="exampleInputPassword1">
+                    <span class="text-danger">
+                        @error('password')
+                            {{ $message }}
+                        @enderror
+                    </span>
                 </div>
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
                     <input type="password" class="form-control" name="confirm-password" id="exampleInputPassword1">
-                </div>
+                </div> --}}
                 <center>
                     <button type="submit" class="btn btn-primary"
                         style="width: 50%; letter-spacing: 0.1em; font-weight: 700;"> Register
