@@ -39,7 +39,7 @@
 
             <div class="collapse navbar-collapse float-end" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-pills me-3 ms-2 mb-2 mb-lg-0">
-                    <li class="nav-item me-3 fw-normal">
+                    <li class="nav-item me-1">
                         <a class="nav-link" 
                             style="color: rgb(0, 0, 0); font-weight: 500" 
                             aria-current="page" href="#">
