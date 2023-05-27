@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -18,7 +19,26 @@ class AuthController extends Controller
     }
 
     public function login(Request $request) {
-        
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string'
+        ]);
+
+        $details = $request->only('email','password');
+
+        if(Auth::attempt($details)) {
+            return redirect('/');
+        } else {
+            return redirect()->back()->withInput($request->only('email'))->withErrors([
+                'email' => "Invalid Credentials"
+            ]);
+        }
+    }
+
+    public function logout() {
+        Auth::logout();
+
+        return redirect('/user/login');
     }
 
     public function register(Request $request) {

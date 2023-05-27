@@ -22,8 +22,16 @@ Route::get('/', function () {
 /* Page Routes */
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+
 /* AUTH ROUTES */
-Route::get('/user/register', [AuthController::class, 'register_view'])->name('user.register');
+
+    //Login Route
 Route::get('/user/login', [AuthController::class, 'login_view'])->name('user.login');
 Route::post('/user/login', [AuthController::class, 'login'])->name('login');
+
+    //Logout Route
+Route::post('/user/logout', [AuthController::class, 'logout'])->name('logout');
+
+    //Register Route
+Route::get('/user/register', [AuthController::class, 'register_view'])->name('user.register');
 Route::post('user/register', [AuthController::class, 'register'])->name('register');
