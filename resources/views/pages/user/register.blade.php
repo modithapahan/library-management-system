@@ -22,7 +22,7 @@
                 @endif
                 <div class="mb-3">
                     <label for="exampleInputName1" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="name" value="{{ old('name') }}" id="exampleInputName1" required>
+                    <input type="text" class="form-control" name="name" value="{{ old('name') }}" id="exampleInputName1">
                     <span class="text-danger">
                         @error('name')
                             {{ $message }}
@@ -31,7 +31,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" name="email" value="{{ old('email') }}" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                    <input type="email" class="form-control" name="email" value="{{ old('email') }}" id="exampleInputEmail1" aria-describedby="emailHelp">
                     <span class="text-danger">
                         @error('email')
                             {{ $message }}
@@ -40,7 +40,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" value="{{ old('password') }}" id="exampleInputPassword1" required>
+                    <input type="password" class="form-control" name="password" value="{{ old('password') }}" id="exampleInputPassword1">
                     <span class="text-danger">
                         @error('password')
                             {{ $message }}
@@ -49,7 +49,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" required>
+                    <input type="password" class="form-control" name="password_confirmation" id="password_confirmation">
                 </div>
                 <center>
                     <button type="submit" class="btn btn-primary"

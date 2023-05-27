@@ -49,7 +49,7 @@
                     <li class="nav-item">
                         <a class="nav-link" 
                             style="color: rgb(0, 0, 0); font-weight: 500" 
-                            href="#">
+                            href="{{ route('books') }}">
                             Books
                         </a>
                     </li>
