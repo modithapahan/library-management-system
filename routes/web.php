@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,8 @@ Route::post('/user/logout', [AuthController::class, 'logout'])->name('logout');
     //Register Route
 Route::get('/user/register', [AuthController::class, 'register_view'])->name('user.register');
 Route::post('user/register', [AuthController::class, 'register'])->name('register');
+
+Route::middleware('Authenticate')->group(function() {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+});
+// Route::get('/admin/dashboard', [DashboardController::class, 'index']);
