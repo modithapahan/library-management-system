@@ -74,6 +74,8 @@
                             Contact
                         </a>
                     </li>
+                    @guest
+
                     <li class="nav-item">
                         <a class="nav-link" 
                             style="color: rgb(0, 0, 0); font-weight: 500" 
@@ -88,6 +90,15 @@
                             Register
                         </a>
                     </li>
+                        
+                    @else
+                        <li class="nav-item">
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-primary fw-medium">Logout</button>
+                            </form>
+                        </li>
+                    @endguest
                 </ul>
             </div>
         </div>
