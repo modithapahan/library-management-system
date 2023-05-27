@@ -23,9 +23,9 @@ class AuthController extends Controller
 
     public function register(Request $request) {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|max:8|max:12'
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|max:8|max:12|confirmed'
         ]);
 
         $user = new User();
@@ -35,7 +35,7 @@ class AuthController extends Controller
         $res = $user->save();
 
         if($res) {
-            return redirect('home')->with('success', 'You have registerd successfully!');
+            return redirect('/')->with('success', 'You have registerd successfully!');
         } else {
             return back()->with('fail', 'Something wrong!');
         }
