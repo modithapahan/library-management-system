@@ -24,14 +24,17 @@ class AuthController extends Controller
             'password' => 'required|string'
         ]);
 
-        $details = $request->only('email','password');
+        $details = User::where('email', '=', $request->email)->first();
 
-        if(Auth::attempt($details)) {
-            return redirect('/');
+        if($details) {
+            if(Hash::check($request->password, $details->password)) {
+                $request->session()->put('loginId', $details->id);
+                return redirect('/');
+            } else {
+                return back()->withErrors(['password' => 'Password not match']);
+            }
         } else {
-            return redirect()->back()->withInput($request->only('email'))->withErrors([
-                'email' => "Invalid Credentials"
-            ]);
+            return back()->withErrors(['email' => 'This email is not registerd']);
         }
     }
 
